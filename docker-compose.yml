@@ -2,13 +2,13 @@ version: '2'
 services:
   gocd-server:
     build: ./server
-    image: "gocd-server"
+    image: "gocd/gocd-server"
     ports:
      - "8153:8153"
      - "8154:8154"
 
   gocd-agent:
     build: ./agent
-    image: "gocd-agent"
+    image: "gocd/gocd-agent"
     links:
       - gocd-server:go-server
